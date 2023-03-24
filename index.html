@@ -12,14 +12,72 @@
 </head>
 
 <!-- Header -->
+
 <body>
   <header class="container-fluid text-center text-white bg-dark p-2 weather-header">
     <h1>Weather Dashboard</h1>
   </header>
 
-  <!-- grid view of the layout with search button feature-->
+  <div class="row content-row">
+    <div class="col-12 col-md-3 bg-light pt-3">
+      <h4>Search City</h4>
+
+      <!--Search input-field and button-->
+      <form action="">
+        <div class="form-group input-group">
+          <input type="text" class="form-control" id="search-city" placeholder="Enter city name ex. London">
+          <div class="input-group-append">
+          </div>
+        </div>
+        <button class="btn btn-success" type="button" id="search-flight-button">
+          Search
+        </button>
+
+    </div>
+  </div>
+
+  </form>
+
+  
+  <!-- Saved Search History -->
+  <div class="card">
+    <ul class="list-group list-group-flush" id="search-history">
+
+    </ul>
+    <!--Clears saved cities-->
+    <button id="clear-history" class="btn btn-sm btn-info hide">Clear Search History</button>
+  </div>
+  </div>
+
+  <div id="weather-content" class="col-12 col-md-9 ">
+    <div class="row">
+      <div class="col-12"></div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+      
+
+      </div>
+    </div>
+    <!--Forecast Section-->
+    <div id="five-day-forecast" class="row">
+      <div class="col-2">
+        <div class="card hide">
+          <div class="card-body">
+            <h5 class="card-title">Date</h5>
+            <i class="fa fa-sun"></i>
+            <p class="card-text mb-0">Temp: </p>
+            <p class="card-text mb-0">Price: </p>
+            <p class="card-text">Departing from: </p>
+            <p class="card-text">Arriving at: </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- grid view of the layout with search button feature
   <!-- max-width for ultra wide resolutions -->
-  <div class="container-fluid" style="max-width: 1400px">
+    <!-- <div class="container-fluid" style="max-width: 1400px">
     <div class="row">
       <aside class="col-lg-3 pb-3">
         <h2 id="form-heading" class="mt-1 h3 form-label">
@@ -40,21 +98,58 @@
           </div>
         </form>
         <div class="list-group" id="history"></div>
-      </aside>
+      </aside> -->
 
-      <div class="col-lg-9 pb-3">
+    <!-- Saved Search History -->
+    <!-- <div class="card">
+        <ul class="list-group list-group-flush" id="search-history-list">
+
+        </ul> -->
+    <!--Clears saved cities-->
+    <!-- <button id="clear-history" class="btn btn-sm btn-info hide">Clear Search History</button>
+    </div>
+</div>
+
+<div id="weather-content" class="col-12 col-md-9 ">
+    <div class="row">
+        <div class="col-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+          
+
+        </div>
+    </div> -->
+    <!-- Forecast Section
+    <div id="five-day-forecast" class="row">
+        <div class="col-2">
+            <div class="card hide">
+                <div class="card-body">
+                    <h5 class="card-title">Date</h5>
+                    <i class="fa fa-sun"></i>
+                    <p class="card-text mb-0">Temp: </p>
+                    <p class="card-text mb-0">Price: </p>
+                    <p class="card-text">Departing from: </p>
+                    <p class="card-text">Arriving at: </p>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div class="col-lg-9 pb-3">
         <section id="today" class="mt-3" role="region" aria-live="polite"></section>
         <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
       </div>
     </div>
-  </div>
+  </div> --> -->
 
-  <!-- Moment.js -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-  <!-- jQuery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <!-- local JS -->
-  <script src="./starter/script.js"></script>
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- local JS -->
+    <script src="./starter/script.js"></script>
 </body>
 
 </html>
