@@ -59,25 +59,51 @@
 
       </div>
     </div>
-    <!--Forecast Section-->
-    <div id="five-day-forecast" class="row">
-      <div class="col-2">
-        <div class="card hide">
-          <div class="card-body">
-            <h5 class="card-title">Date</h5>
-            <i class="fa fa-sun"></i>
-            <p class="card-text mb-0">Temp: </p>
-            <p class="card-text mb-0">Price: </p>
-            <p class="card-text">Departing from: </p>
-            <p class="card-text">Arriving at: </p>
-          </div>
-        </div>
+    <!-- Current Weather Section -->
+    <div class="city-info border my-3 px-3 py-3">
+      <h2 id="current-city">Current Weather At: <small class="text-muted" id="current-date"></small>
+      </h2>
+
+
+      <p class="mb-0">Temperature: <span id="current-temperature"></span></p>
+
+      <p class="mb-0">Wind: <span id="current-wind-speed"></span></p>
+
+      <p class="mb-0">Humidity: <span id="current-humidity"></span></p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+
+    <!-- Forcast Sub-Heading -->
+    <h3>5-Day Forecast</h3>
+
+  </div>
+</div>
+
+<!-- Weather Forecast Section -->
+<div id="five-day-forecast" class="row">
+  <div class="col-2">
+    <div class="card hide">
+      <div class="card-body">
+        <h5 class="card-title">Date</h5>
+        <i class="fa fa-sun"></i>
+        <p class="card-text mb-0">Temperature: </p>
+        <p class="card-text mb-0">Wind: </p>
+        <p class="card-text">Humidity: </p>
       </div>
     </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
 
     <!-- grid view of the layout with search button feature
-  <!-- max-width for ultra wide resolutions -->
-    <!-- <div class="container-fluid" style="max-width: 1400px">
+  max-width for ultra wide resolutions -->
+    <div class="container-fluid" style="max-width: 1400px">
     <div class="row">
       <aside class="col-lg-3 pb-3">
         <h2 id="form-heading" class="mt-1 h3 form-label">
@@ -98,7 +124,7 @@
           </div>
         </form>
         <div class="list-group" id="history"></div>
-      </aside> -->
+      </aside>
 
     <!-- Saved Search History -->
     <!-- <div class="card">
@@ -120,21 +146,7 @@
 
         </div>
     </div> -->
-    <!-- Forecast Section
-    <div id="five-day-forecast" class="row">
-        <div class="col-2">
-            <div class="card hide">
-                <div class="card-body">
-                    <h5 class="card-title">Date</h5>
-                    <i class="fa fa-sun"></i>
-                    <p class="card-text mb-0">Temp: </p>
-                    <p class="card-text mb-0">Price: </p>
-                    <p class="card-text">Departing from: </p>
-                    <p class="card-text">Arriving at: </p>
-                </div>
-            </div>
-        </div>
-    </div> -->
+  
 
 
     <!-- <div class="col-lg-9 pb-3">
@@ -142,7 +154,7 @@
         <section id="forecast" class="row mt-3" role="region" aria-live="polite"></section>
       </div>
     </div>
-  </div> --> -->
+  </div> -->
 
     <!-- Moment.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
