@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+
+.card {
+    background-color: #c8b6ff;
+}
+
+h1{
+  font-size: 64px;
+  padding: 2%;
+  border: #c8b6ff;
+  font-weight: bolder;
+}
+
+
+

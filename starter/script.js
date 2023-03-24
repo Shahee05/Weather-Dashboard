@@ -1,5 +1,5 @@
 // create variables to access the search section elements
-var searchCityInput = $("#arrival-city");
+var searchCityInput = $("#search-city");
 var searchCityButton = $("#search-city-button");
 var searchHistoryList = $('#search-history-list');
 var clearHistoryButton = $("#clear-history");
@@ -13,7 +13,7 @@ var currentWindSpeed = $("#current-wind-speed")
 var weatherContent = $("#weather-content");
 
 // open weather APIkey
-var APIkey = "a401750862df7e2da3409fd7e6c607e0";
+var APIkey = "cb19ee61d7db3f9c4f2a7bcaca0340e9";
 
 // accessing the data
 var cityList = [];
@@ -23,19 +23,19 @@ var currentDate = moment().format('ll');
 $("#current-date").text("(" + currentDate + ")");
 
 // Check if any search history exists when page loads
-//initalizeHistory();
-//showClear();
+initalizeHistory();
+showClear();
 
 // Hitting enter while input is focused will trigger
 // value added to search history
 $(document).on("submit", function () {
-  event.preventDefault();
+  Event.preventDefault();
 
   // Grab value entered into search bar 
   var searchValue = searchCityInput.val().trim();
 
   currentConditionsRequest(searchValue)
-  searchHistory(searchValue);
+  searchHistoryList(searchValue);
   searchCityInput.val("");
 });
 
@@ -48,7 +48,7 @@ searchCityButton.on("click", function (event) {
   var searchValue = searchCityInput.val().trim();
 
   currentConditionsRequest(searchValue)
-  searchHistory(searchValue);
+  searchHistoryList(searchValue);
   searchCityInput.val("");
 });
 
@@ -67,7 +67,7 @@ searchHistoryList.on("click", "li.city-btn", function (event) {
   // console.log($(this).data("value"));
   var value = $(this).data("value");
   currentConditionsRequest(value);
-  searchHistory(value);
+  searchHistoryList(value);
 
 });
 
@@ -137,7 +137,7 @@ function currentConditionsRequest(searchValue) {
         forecastCardBody.append(forecastDate);
         forecastCardBody.append(forecastIcon);
         forecastCardBody.append(forecastTemp);
-        //-----------
+      
         forecastCardBody.append(forecastWind);
         forecastCardBody.append(forecastHumidity);
 
@@ -147,21 +147,15 @@ function currentConditionsRequest(searchValue) {
         forecastTemp.text(response.list[i].main.temp);
         forecastTemp.prepend("Temp: ");
         forecastTemp.append("&deg;C");
-        //------------------
-        // forecastWind.text(response.list[i].wind.speed); 
-        // forecastWind.text(response.list[i].wind.speed); 
-        //---was "Wind"
-        forecastWind.prepend("Departure: ");
-        //-----was "m/sec"
-        forecastWind.append(" ");
-        // forecastHumidity.text(response.list[i].main.humidity);
-        //------was "Humidity" 
-        forecastHumidity.prepend("Arrival: ");
-        //--------"%"
-        forecastHumidity.append("");
+      
 
+        forecastWind.text(response.list[i].wind.speed);
+        forecastWind.prepend("Wind: ");
+        forecastWind.append(" m/sec ");
 
-
+        forecastHumidity.text(response.list[i].main.humidity);
+        forecastHumidity.prepend("Humidity: ");
+        forecastHumidity.append("%");
       }
     });
 
@@ -202,7 +196,7 @@ function searchHistory(searchValue) {
       weatherContent.removeClass("hide");
     }
   }
-  // console.log(cityList);
+  console.log(cityList);
 }
 
 // List the array into the search history sidebar
@@ -229,7 +223,7 @@ function initalizeHistory() {
   if (localStorage.getItem("cities")) {
     cityList = JSON.parse(localStorage.getItem("cities"));
     var lastIndex = cityList.length - 1;
-    // console.log(cityList);
+
     listArray();
     // Display the last city viewed
     // if page is refreshed
